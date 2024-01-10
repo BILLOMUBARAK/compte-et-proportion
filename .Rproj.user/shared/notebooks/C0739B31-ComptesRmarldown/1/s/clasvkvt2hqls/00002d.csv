@@ -1,0 +1,7 @@
+"0","# Ajoutez un graphique en forme de sucette (lollipop) ici"
+"0",""
+"0","ggplot(data = essentiel_par_CATEGORY,"
+"0"," mapping = aes(x = proportion, y = total, color = CATEGORY)) +"
+"0"," geom_pointrange(aes(ymin = 0, ymax = total),"
+"0"," # Rendre les lignes un peu plus épaisses et les points un peu plus gros"
+"0"," fatten = 5, size = 1.5) "

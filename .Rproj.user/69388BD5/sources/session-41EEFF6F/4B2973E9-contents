@@ -1,0 +1,512 @@
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essential <- essentiel_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(ARRONDISSEMENT),
+ARRONDISSEMENT = facteur(ARRONDISSEMENT),
+CATÉGORIE = facteur(CATÉGORIE))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(ARRONDISSEMENT),
+ARRONDISSEMENT = facteur(ARRONDISSEMENT),
+CATÉGORIE = facteur(CATÉGORIE))
+essential_raw
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+ARRONDISSEMENT = facteur(BOROUGH),
+CATÉGORIE = facteur(CATEGORY))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+ARRONDISSEMENT = facteur(BOROUGH),
+CATÉGORy = facteur(CATEGORIE))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = facteur(ARRONDISSEMENT),
+CATEGORY = facteur(CATÉGORIE))
+essential_raw
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(BOROUGH),
+ARRONDISSEMENT = facteur(ARRONDISSEMENT),
+CATÉGORIE = facteur(CATEGORY))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = facteur(BOROUGH),
+CATEGORY = facteur(CATEGORY))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(BOROUGH),
+)
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essential_raw <- type_convert(essential_raw, show_col_types = FALSE)
+essentiel_par_arrondissement <- essentiel %>%
+group_by(ARRONDISSEMENT) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / somme(total))
+essentiel
+essential_raw
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = facteur(BOROUGH),
+CATEGORY = facteur(CATEGORY))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essentiel_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(ARRONDISSEMENT),
+ARRONDISSEMENT = factor(ARRONDISSEMENT),
+CATÉGORIE = factor(CATÉGORIE))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(ARRONDISSEMENT),
+ARRONDISSEMENT = factor(ARRONDISSEMENT),
+CATÉGORIE = factor(CATÉGORIE))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv", delimiter = ",")
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(ARRONDISSEMENT = str_to_title(ARRONDISSEMENT),
+ARRONDISSEMENT = factor(ARRONDISSEMENT),
+CATÉGORIE = factor(CATÉGORIE))
+essential_raw
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = factor(BOROUGH),
+CATÉGORIE = factor(CATÉGORIE))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv")
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = factor(BOROUGH),
+CATEGORY = factor(CATEGORY))
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv",
+show_col_types = FALSE)
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+mutate(BOROUGH = str_to_title(BOROUGH),
+BOROUGH = factor(BOROUGH),
+CATEGORY = factor(CATEGORY))
+essentiel
+essentiel_par_arrondissement <- essentiel %>%
+group_by(ARRONDISSEMENT) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / somme(total))
+essentiel_par_arrondissement <- essentiel %>%
+group_by(BOROUGH) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / somme(total))
+essential_raw
+essentiel_par_arrondissement <- essentiel %>%
+group_by(BOROUGH) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / sum(total))
+essentiel_par_arrondissement
+# Ajouter un graphique avec geom_col() ici
+ggplot(data = essentiel_par_arrondissement,mapping = aes(x=BOROUGH,y=total,fill=proportion))+
+geom_col()
+# Ajouter un graphique avec geom_col() ici
+ggplot(data = essentiel_par_arrondissement,mapping = aes(x=BOROUGH,y=total,fill=proportion))+
+geom_col(position=position_dodge())
+# Créer un jeu de données résumé des projets par catégorie
+#
+# Je ne vous donnerai pas le code pour cela (gros indice cependant : copiez le code pour le
+# résumé d'arrondissement et ne changer qu'une chose)
+essentiel_par_arrondissement <- essentiel %>%
+group_by(CATEGORY) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / sum(total))
+essentiel_par_arrondissement <- essentiel %>%
+group_by(BOROUGH) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / sum(total))
+# Créer un jeu de données résumé des projets par catégorie
+#
+# Je ne vous donnerai pas le code pour cela (gros indice cependant : copiez le code pour le
+# résumé d'arrondissement et ne changer qu'une chose)
+essentiel_par_CATEGORY <- essentiel %>%
+group_by(CATEGORY) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / sum(total))
+essentiel_par_CATEGORY
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22")) +
+# Utilisez des virgules au lieu de la notation scientifique
+scale_y_continuous(labels = comma) +
+# Désactivez la légende puisque le titre montre ce qu'est l'orange
+guides(color = "none") +
+labs(title = "résumé-catégorie-intrigue",
+x = NULL, y = "total proportion")
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22")) +
+# Désactivez la légende puisque le titre montre ce qu'est l'orange
+guides(color = "none") +
+labs(title = "résumé-catégorie-intrigue",
+x = NULL, y = "total proportion")
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22")) +
+# Utilisez des virgules au lieu de la notation scientifique
+scale_y_continuous(labels = comma) +
+# Désactivez la légende puisque le titre montre ce qu'est l'orange
+guides(color = "none") +
+labs(title = "résumé-catégorie-intrigue",
+x = "Categorie", y = "total")
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22"))
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x =total, y = CATEGORY, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = CATEGORY, y = total, color = proportion)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = proportion, y = total, color = CATEGORY)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = proportion, y = total, color = CATEGORY)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22")) +
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = proportion, y = total, color = CATEGORY)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5) +
+# On utilise du gris et orange
+scale_color_manual(values = c("grey70", "#f2ad22"))
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+ggplot(data = essentiel_par_CATEGORY,
+mapping = aes(x = proportion, y = total, color = CATEGORY)) +
+geom_pointrange(aes(ymin = 0, ymax = total),
+# Rendre les lignes un peu plus épaisses et les points un peu plus gros
+fatten = 5, size = 1.5)
+# Créer un ensemble de données résumé des projets par arrondissement et par catégorie
+#
+# Je ne vous donnerai pas non plus le code pour faire le résumé de la heatmap. Vous avez
+# besoin de grouper par deux variables pour faire le résumé. IMPORTANT, vous aurez également
+# besoin d'ajouter un autre group_by() entre summarise() et mutate(), sinon,
+# R calculera des pourcentages dans des groupes inattendus.
+#
+# Si vous voulez que les pourcentages des catégories s'additionnent à 100% dans chaque arrondissement,
+# vous voudrez grouper par arrondissement avant de calculer la proportion ; si tu veux
+# les pourcentages d'arrondissements à additionner jusqu'à 100% dans chaque catégorie, vous voudrez
+# groupe par catégorie
+essentiel_par_arrondissement_et_category<- essentiel %>%
+group_by(BOROUGH,CATEGORY) %>%
+summarise(total = n()) %>%
+mutate(proportion = total / sum(total))
+# Créer un ensemble de données résumé des projets par arrondissement et par catégorie
+#
+# Je ne vous donnerai pas non plus le code pour faire le résumé de la heatmap. Vous avez
+# besoin de grouper par deux variables pour faire le résumé. IMPORTANT, vous aurez également
+# besoin d'ajouter un autre group_by() entre summarise() et mutate(), sinon,
+# R calculera des pourcentages dans des groupes inattendus.
+#
+# Si vous voulez que les pourcentages des catégories s'additionnent à 100% dans chaque arrondissement,
+# vous voudrez grouper par arrondissement avant de calculer la proportion ; si tu veux
+# les pourcentages d'arrondissements à additionner jusqu'à 100% dans chaque catégorie, vous voudrez
+# groupe par catégorie
+essentiel_par_arrondissement_et_category<- essentiel %>%
+group_by(BOROUGH,CATEGORY) %>%
+summarise(group_by(total = n())) %>%
+mutate(proportion = total / sum(total))
+# Créer un ensemble de données résumé des projets par arrondissement et par catégorie
+#
+# Je ne vous donnerai pas non plus le code pour faire le résumé de la heatmap. Vous avez
+# besoin de grouper par deux variables pour faire le résumé. IMPORTANT, vous aurez également
+# besoin d'ajouter un autre group_by() entre summarise() et mutate(), sinon,
+# R calculera des pourcentages dans des groupes inattendus.
+#
+# Si vous voulez que les pourcentages des catégories s'additionnent à 100% dans chaque arrondissement,
+# vous voudrez grouper par arrondissement avant de calculer la proportion ; si tu veux
+# les pourcentages d'arrondissements à additionner jusqu'à 100% dans chaque catégorie, vous voudrez
+# groupe par catégorie
+essentiel_par_arrondissement_et_category<- essentiel %>%
+group_by(BOROUGH) %>%
+summarise(total = n()) %>%
+group_by(CATEGORY)%>%
+mutate(proportion = total / sum(total))
+# Créer un ensemble de données résumé des projets par arrondissement et par catégorie
+#
+# Je ne vous donnerai pas non plus le code pour faire le résumé de la heatmap. Vous avez
+# besoin de grouper par deux variables pour faire le résumé. IMPORTANT, vous aurez également
+# besoin d'ajouter un autre group_by() entre summarise() et mutate(), sinon,
+# R calculera des pourcentages dans des groupes inattendus.
+#
+# Si vous voulez que les pourcentages des catégories s'additionnent à 100% dans chaque arrondissement,
+# vous voudrez grouper par arrondissement avant de calculer la proportion ; si tu veux
+# les pourcentages d'arrondissements à additionner jusqu'à 100% dans chaque catégorie, vous voudrez
+# groupe par catégorie
+essentiel_par_arrondissement_et_category<- essentiel %>%
+group_by(BOROUGH,CATEGORY) %>%
+summarise(total = n()) %>%
+group_by(CATEGORY)%>%
+mutate(proportion = total / sum(total))
+essentiel_par_arrondissement_et_category
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+scale_fill_viridis_c(option = "inferno", labels = comma) +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+scale_fill_viridis_c(option = "inferno") +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile()) +
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile()) +
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+scale_fill_viridis_c(option = "inferno", labels = comma) +
+# On ajoute des labels
+labs(x = "Day of the month", y = NULL,
+title = "Average births per day",
+subtitle = "1994-2014",
+fill = "Average births") +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+scale_fill_viridis_c(option = "inferno") +
+# On ajoute des labels
+labs(x = "Day of the month", y = NULL,
+title = "Average births per day",
+subtitle = "1994-2014",
+fill = "Average births") +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+scale_fill_viridis_c() +
+# On ajoute des labels
+labs(x = "Day of the month", y = NULL,
+title = "Average births per day",
+subtitle = "1994-2014",
+fill = "Average births") +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()
+# Ajoutez une heatmap ici avec geom_tile()
+ggplot(data = essentiel_par_arrondissement_et_category,
+mapping = aes(x =BOROUGH, y = total, fill = CATEGORY)) +
+geom_tile() +
+# On met la couleur viridis
+# On ajoute des labels
+labs(x = "Day of the month", y = NULL,
+title = "Average births per day",
+subtitle = "1994-2014",
+fill = "Average births") +
+# Forcer toutes les tuiles à avoir des largeurs et des hauteurs égales
+coord_equal() +
+# Utilisez un thème plus propre
+theme_minimal()

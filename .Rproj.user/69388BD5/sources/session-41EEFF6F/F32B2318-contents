@@ -1,0 +1,138 @@
+---
+title: "dev2_ComptesProportion"
+author: "Mamadou Billo Diallo"
+date: "2023-09-15"
+output:
+  word_document: default
+  html_document: default
+---
+
+# Tâche 1 : Réflexion
+
+Mettez votre réflexion ici des lectures sur les comptes et proportions
+il est important d'utiliser comptes et les proportions  dans nos visualisations car elles nous permettent de  visualisé  les données en entier sans ambiguité.les comptes  peuvent  aider à  résumer des données brutes en comptant le nombre d'occurrences de chaque catégorie ou élément. pour une analyse descriptive Ils permettent de répondre à des questions simples telles que "Combien de fois cela s'est-il produit ?"
+ Les proportions sont aussi comme des comptes exprimés en pourcentage par rapport à un total. Ils sont particulièrement utiles pour comparer des sous-groupes par rapport à l'ensemble des données. Par exemple, vous pouvez comparer la proportion de personnes préférant un certain type de nourriture dans différentes régions.
+
+# Tâche 2 : Construction pandémique essentielle
+
+## Charger et nettoyer les données
+
+Nous chargeons et nettoyons d'abord les données (téléchargées en mai 2020, vous pouvez aller charger des données plus récentes!):
+
+```{r load-clean-data}
+
+# Vous n'aurez besoin que de la bibliothèque tidyverse pour cet exercice
+library(tidyverse)
+
+# Charger les données d'origine
+essential_raw <- read_csv("data/EssentialConstruction.csv",
+                          show_col_types = FALSE)
+
+# Nettoyer un peu les données
+# Certains noms d'arrondissements sont en MAJUSCULES, nous utilisons donc str_to_title() pour convertir
+# tout dans la colonne
+# Nous faisons également des facteurs ARRONDISSEMENT et CATÉGORIE (ou variables catégorielles)
+essentiel <- essential_raw %>%
+  mutate(BOROUGH = str_to_title(BOROUGH),
+         BOROUGH = factor(BOROUGH),
+         CATEGORY = factor(CATEGORY))
+
+```
+```{r}
+essential_raw
+```
+
+## Projets approuvés par arrondissement
+
+À l'heure actuelle, il y a une ligne pour chaque chantier de construction approuvé. Nous devons condenser cela pour obtenir le nombre de chantiers de construction selon différentes variables. Nous pouvons le faire en utilisant `group_by()` et `summarize()`
+
+```{r resume-data-borough}
+essentiel_par_arrondissement <- essentiel %>%
+  group_by(BOROUGH) %>%
+  summarise(total = n()) %>%
+  mutate(proportion = total / sum(total))
+```
+```{r}
+essentiel_par_arrondissement
+```
+
+```{r résumé-parcelle-arrondissement}
+# Ajouter un graphique avec geom_col() ici
+ggplot(data = essentiel_par_arrondissement,mapping = aes(x=BOROUGH,y=total,fill=proportion))+
+  geom_col(position=position_dodge())
+```
+
+
+## Projets approuvés par catégorie
+
+```{r resume-data-category}
+# Créer un jeu de données résumé des projets par catégorie
+#
+# Je ne vous donnerai pas le code pour cela (gros indice cependant : copiez le code pour le
+# résumé d'arrondissement et ne changer qu'une chose)
+essentiel_par_CATEGORY <- essentiel %>%
+  group_by(CATEGORY) %>%
+  summarise(total = n()) %>%
+  mutate(proportion = total / sum(total))
+
+
+
+```
+
+```{r}
+essentiel_par_CATEGORY
+```
+
+
+```{r résumé-catégorie-intrigue}
+# Ajoutez un graphique en forme de sucette (lollipop) ici
+
+ggplot(data = essentiel_par_CATEGORY,
+ mapping = aes(x = proportion, y = total, color = CATEGORY)) +
+ geom_pointrange(aes(ymin = 0, ymax = total),
+ # Rendre les lignes un peu plus épaisses et les points un peu plus gros
+ fatten = 5, size = 1.5) 
+```
+
+
+## Projets approuvés dans l'arrondissement et la catégorie
+
+```{r resume-data-heatmap}
+# Créer un ensemble de données résumé des projets par arrondissement et par catégorie
+#
+# Je ne vous donnerai pas non plus le code pour faire le résumé de la heatmap. Vous avez
+# besoin de grouper par deux variables pour faire le résumé. IMPORTANT, vous aurez également
+# besoin d'ajouter un autre group_by() entre summarise() et mutate(), sinon,
+# R calculera des pourcentages dans des groupes inattendus.
+#
+# Si vous voulez que les pourcentages des catégories s'additionnent à 100% dans chaque arrondissement,
+# vous voudrez grouper par arrondissement avant de calculer la proportion ; si tu veux
+# les pourcentages d'arrondissements à additionner jusqu'à 100% dans chaque catégorie, vous voudrez
+# groupe par catégorie
+
+
+essentiel_par_arrondissement_et_category<- essentiel %>%
+  group_by(BOROUGH,CATEGORY) %>%
+  summarise(total = n()) %>%
+  group_by(CATEGORY)%>%
+  mutate(proportion = total / sum(total))
+```
+```{r}
+essentiel_par_arrondissement_et_category
+
+```
+
+```{r plot-heatmap}
+# Ajoutez une heatmap ici avec geom_tile()
+
+
+ggplot(data = essentiel_par_arrondissement_et_category,
+       mapping = aes(x = BOROUGH, y = CATEGORY, fill = total)) +
+  geom_tile() +
+  labs(
+    x = "Arrondissement",
+    y = "Catégorie",
+    fill = "Total de projets"
+  ) +
+   scale_fill_viridis_c() 
+```

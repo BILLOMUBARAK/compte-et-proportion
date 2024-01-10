@@ -1,0 +1,3 @@
+"0","# Ajouter un graphique avec geom_col() ici"
+"0","ggplot(data = essentiel_par_arrondissement,mapping = aes(x=BOROUGH,y=total,fill=proportion))+"
+"0","  geom_col(position=position_dodge())"

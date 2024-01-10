@@ -1,0 +1,7 @@
+"2","Warning in gzfile(file, ""wb"") :"
+"2","
+ "
+"2"," cannot open compressed file 'C:/Users/Mamadou Billo/Documents/Automne 2023/visualisation de données/DEVOIR/2/Devoir 2-20230911/Devoir - Comptes et proportions/DEVOIR2b/.Rproj.user/shared/notebooks/C0739B31-ComptesRmarldown/1/69388BD5A02F8FC1/cbzuv5mz06igp_t/45e48be61d66469e8cfd94bd06f71fa1.snapshot', probable reason 'No such file or directory'
+"
+"2","Error in gzfile(file, ""wb"") : cannot open the connection
+"

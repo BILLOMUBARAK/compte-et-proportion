@@ -1,0 +1,4 @@
+"0","essentiel_par_arrondissement <- essentiel %>%"
+"0","  group_by(BOROUGH) %>%"
+"0","  summarise(total = n()) %>%"
+"0","  mutate(proportion = total / sum(total))"
